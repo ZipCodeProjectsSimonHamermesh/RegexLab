@@ -18,25 +18,27 @@ public class DataValidatorTest {
 
     @Test
     public void testDataValidator_isValidEnhancedUsername(){
-        assertTrue(DataValidator.isValidUsername("abc"));
-        assertTrue(DataValidator.isValidUsername("a_bc"));
-        assertTrue(DataValidator.isValidUsername("a1bc"));
-        assertFalse(DataValidator.isValidUsername("_abc"));
-        assertFalse(DataValidator.isValidUsername("a b"));
-        assertFalse(DataValidator.isValidUsername("1ab"));
+        assertTrue(DataValidator.isValidEnhancedUsername("abc"));
+        assertTrue(DataValidator.isValidEnhancedUsername("a_bc"));
+        assertTrue(DataValidator.isValidEnhancedUsername("a1bc"));
+        assertTrue(DataValidator.isValidEnhancedUsername("abcdefghijklm123456789101"));
+        assertFalse(DataValidator.isValidEnhancedUsername("_abc"));
+        assertFalse(DataValidator.isValidEnhancedUsername("a b"));
+        assertFalse(DataValidator.isValidEnhancedUsername("1ab"));
+        assertFalse(DataValidator.isValidEnhancedUsername("abcdefghijklm12345678902425"));
     }
 
     @Test
     public void testDataValidator_isValidIPAddress(){
-        assertTrue(DataValidator.isValidUsername("111.111.111"));
-        assertTrue(DataValidator.isValidUsername("255.255.255"));
-        assertTrue(DataValidator.isValidUsername("000.000.000"));
-        assertFalse(DataValidator.isValidUsername("111111111"));
-        assertFalse(DataValidator.isValidUsername("111.111111"));
-        assertFalse(DataValidator.isValidUsername("111.111.1111"));
-        assertFalse(DataValidator.isValidUsername("256.111.111"));
-        assertFalse(DataValidator.isValidUsername("111.256.111"));
-        assertFalse(DataValidator.isValidUsername("111.111.256"));
+        assertTrue(DataValidator.isValidIPAddress("111.111.111"));
+        assertTrue(DataValidator.isValidIPAddress("255.255.255"));
+        assertTrue(DataValidator.isValidIPAddress("000.000.000"));
+        assertFalse(DataValidator.isValidIPAddress("111111111"));
+        assertFalse(DataValidator.isValidIPAddress("111.111111"));
+        assertFalse(DataValidator.isValidIPAddress("111.111.1111"));
+        assertFalse(DataValidator.isValidIPAddress("256.111.111"));
+        assertFalse(DataValidator.isValidIPAddress("111.256.111"));
+        assertFalse(DataValidator.isValidIPAddress("111.111.256"));
 
     }
 

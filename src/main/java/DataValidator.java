@@ -5,7 +5,7 @@ public class DataValidator {
 
     public static boolean isValidUsername(String x){
 
-        if(x.matches("[a-z]{3,25}")){return true;}else{return false;}
+        return x.matches("[a-z]{3,25}");
 
         /*if(x.length()>=3 && x.length()<=25){
           char[] stringToChars = x.toCharArray();
@@ -20,7 +20,7 @@ public class DataValidator {
     }
 
     public static boolean isValidEnhancedUsername(String x){
-        return false;
+        return x.matches("([a-zA-Z])([a-zA-Z0-9_]{2,24})");
     }
 
     public static boolean isValidIPAddress(String x){
