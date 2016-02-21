@@ -5,7 +5,9 @@ public class DataValidator {
 
     public static boolean isValidUsername(String x){
 
-        if(x.length()>=3 && x.length()<=25){
+        if(x.matches("[a-z]{3,25}")){return true;}else{return false;}
+
+        /*if(x.length()>=3 && x.length()<=25){
           char[] stringToChars = x.toCharArray();
             for(char y : stringToChars){
                 int charInt = (int) y;
@@ -14,7 +16,7 @@ public class DataValidator {
                 } else {return false;}
             }
             return true;
-        } else {return false;}
+        } else {return false;}*/
     }
 
     public static boolean isValidEnhancedUsername(String x){
