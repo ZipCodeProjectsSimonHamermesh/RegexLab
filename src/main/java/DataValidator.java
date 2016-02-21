@@ -24,7 +24,8 @@ public class DataValidator {
     }
 
     public static boolean isValidIPAddress(String x){
-        return false;
+        return x.matches("(((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|0[0-9][0-9])\\.){2})" +
+                "(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|0[0-9][0-9])");
     }
 
 }
